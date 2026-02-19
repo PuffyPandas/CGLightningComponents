@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Parent Component" icon-name="custom:custom14">
+        <lightning-input type = "text" placeholder="Enter your message" value={message} onchange={handlechange}></lightning-input>
+        <lightning-button label="Send"  onclick={handlesend}></lightning-button>
+    
+        <p>{greetings}</p>
+    </lightning-card>
+    <lightning-card>
+        <c-zed-child-comp messages={sendmessage}
+                        onchildmsg = {handlemessagechange}></c-zed-child-comp>
+        
+    </lightning-card>
+</template>
