@@ -1,0 +1,44 @@
+<template>
+    <div>
+        <lightning-card title="Case Closure">
+            <lightning-button label="Close Case" variant="Brand" onclick={handleCloseCase} disabled={isClosing}></lightning-button>
+            <template if:true={isModal}>
+                <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01" class="slds-modal slds-fade-in-open">
+                    <div class="slds-modal__container">
+
+                        <header class="slds-modal__header">
+                            <h2 id="modal-heading-01" class="slds-text-heading_medium"> Provide Closure Details</h2>
+                        </header>
+
+                        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                            <div class="slds-form slds-form_stacked">
+                                <lightning-input type="text" name="rootCause" label="Root Cause" value={rootCause} required onchange={handleInputChange}></lightning-input>
+                                <lightning-textarea name="description" label="Description" value={description} onchange={handleInputChange}></lightning-textarea>
+                                <lightning-textarea name="comments" label="Comments" value={comments} onchange={handleInputChange}></lightning-textarea>
+                            </div>
+                            
+                            <!-- file upload -->
+                             <lightning-file-upload label="Upload Files" name="fileupload" record-id={recordId} accept={acceptedFormat} onuploadfinished={handleFileUpload} multiple>
+                             </lightning-file-upload>
+                             <template if:true={uploadedFiles.length}>
+                                <p>File selected:</p>
+                                <ul>
+                                    <template for:each={uploadedFiles} for:item="f">
+                                        <li key={f.documentId}>{f.name}</li>
+                                    </template>
+                                </ul>
+                             </template>
+                        </div>
+
+                        <footer class="slds-modal__footer">
+                            <lightning-button label="Cancel" variant="neutral" onclick={handleCancel} disabled={isClosing}></lightning-button>
+                            <lightning-button label="Save" variant="Brand" onclick={handleSubmit} disabled={isClosing}></lightning-button>
+                        </footer>
+                    </div>
+                </section> 
+                <div class="slds-backdrop slds-backdrop_open"></div>               
+            </template>
+        </lightning-card>      
+    </div>
+ 
+</template>

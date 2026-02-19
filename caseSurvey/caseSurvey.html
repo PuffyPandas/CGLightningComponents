@@ -1,0 +1,93 @@
+<template>
+    <article class="slds-card">
+        <div class="slds-card__header slds-grid">
+            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__figure">
+                    <span class="slds-icon_container slds-icon-standard-feedback" title="Feedback">
+                        <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                            <use xlink:href="/_slds/icons/standard-sprite/svg/symbols.svg#feedback"></use>
+                        </svg>
+                    </span>
+                </div>
+                <div class="slds-media__body">
+                    <h2 class="slds-card__header-title slds-truncate" title="Case Feedback Survey">
+                        Case Feedback Survey
+                    </h2>
+                </div>
+            </header>
+        </div>
+
+        <div class="slds-card__body slds-card__body_inner">
+            <template if:true={loading}>
+                <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+            </template>
+
+            <template if:true={showNotClosed}>
+                <div class="slds-text-color_destructive slds-m-vertical_medium">
+                    Survey available after the case is Closed.
+                </div>
+            </template>
+
+            <template if:true={showAlreadySubmitted}>
+                <div class="slds-text-color_success slds-m-vertical_medium">
+                    Thank you. Your feedback has already been submitted.
+                </div>
+            </template>
+
+            <template if:true={showForm}>
+                <div class="slds-m-vertical_medium">
+                    <p class="slds-text-title_caps slds-m-bottom_small">Rate the following (1 - 5):</p>
+
+                    <template for:each={questions} for:item="q">
+                        <div key={q.api} class="slds-m-bottom_medium">
+                            <div class="slds-grid slds-wrap slds-gutters_small slds-align_absolute-center">
+                                <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                                    <span class="slds-text-body_regular">{q.label}</span>
+                                </div>
+                                <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                                    <lightning-input type="number"
+                                                     name={q.api}
+                                                     data-api={q.api}
+                                                     min="1"
+                                                     max="5"
+                                                     value={q.value}
+                                                     onchange={handleRatingChange}>
+                                    </lightning-input>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+
+                    <div class="slds-m-vertical_medium">
+                        <lightning-textarea label="Additional Comments (optional)"
+                                            value={comments}
+                                            onchange={handleCommentsChange}>
+                        </lightning-textarea>
+                    </div>
+                </div>
+
+                <div class="slds-m-top_medium slds-grid slds-grid_align-end slds-gutters_small">
+                    <div class="slds-col_bump-left">
+                        <lightning-button variant="neutral"
+                                          label="Reset"
+                                          onclick={handleReset}
+                                          disabled={saving}>
+                        </lightning-button>
+                    </div>
+                    <div>
+                        <lightning-button variant="brand"
+                                          label="Submit Feedback"
+                                          onclick={handleSubmit}
+                                          disabled={isSubmitDisabled}
+                                          class="slds-m-left_small">
+                        </lightning-button>
+                    </div>
+                </div>
+            </template>
+
+            <template if:true={error}>
+                <c-error-panel errors={error}></c-error-panel>
+            </template>
+        </div>
+    </article>
+</template>
