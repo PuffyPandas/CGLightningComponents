@@ -1,0 +1,19 @@
+.container {
+    background: rgb(249,211,228);
+background: linear-gradient(0deg, rgba(249,211,228,1) 0%, rgba(197,219,246,1) 100%);
+    /*background-color: rgb(100, 237, 134);*/
+    padding: 16px;
+    max-height: 480px;
+    overflow-y: scroll;
+    display: block;
+}
+.time{
+    font-size: 3rem; /* rem will depend on current screen weight so used rem instead of pixel so it automatically pick up screen 
+                        width size and based on that it will make your font size bigger or smaller...so 1 rem = 16 pixel*/
+    font-weight: 400;
+}
+
+.greeting{
+    font-size: 2rem;
+    font-weight: 300;
+}
