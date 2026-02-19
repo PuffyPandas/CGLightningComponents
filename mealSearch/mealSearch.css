@@ -1,0 +1,28 @@
+.customsection{
+    background-image: url('/resource/mealDB');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 400px;
+    padding: 20px;
+    align-items: center;
+    color: white; 
+    justify-content: center;
+    display: flex;
+}
+
+.custcontent{
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    border-radius: 8px;
+    width: 100%;
+    padding: 20px;
+    max-width: 600px;
+    color: black;
+}
+.custheading{
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: white;
+}

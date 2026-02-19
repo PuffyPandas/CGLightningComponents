@@ -1,0 +1,30 @@
+.tile{
+    display: block;
+    background-color: black;
+    cursor: pointer;
+}
+
+.innertile{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border-radius: 2px;
+}
+
+.tilecontent{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color:rgb(83, 83, 83);
+    color: white;
+    padding: 6px,8px;
+    text-align: center;
+}
+
+.selected{
+    border: 5px solid brown;
+}

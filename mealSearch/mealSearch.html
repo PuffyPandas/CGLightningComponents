@@ -1,0 +1,17 @@
+<template>
+
+    <div class="customsection">
+        <div class="custcontent">
+            <h1 class="custheading">Meal Hunting</h1>
+            <div class="slds-grid slds-wrap" >
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_8-of-12">
+                    <lightning-input label="Enter your meal" variant="label-hidden"  placeholder="Search your meal" onchange={changehandler} ></lightning-input>
+                </div>
+        
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_4-of-12">
+                    <lightning-button label="Search Recepie" onclick={clickhandler} variant="destructive"></lightning-button> 
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
