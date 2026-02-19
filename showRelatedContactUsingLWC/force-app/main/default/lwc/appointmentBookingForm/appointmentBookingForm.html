@@ -1,0 +1,58 @@
+<template>
+  <!--    
+<lightning-card></lightning-card>
+    <label class="slds-form-element__label" for="select-01">Search for Doctor name</label>
+    <div class="slds-form-element__control">
+        <div class="slds-select_container">
+            <select class="slds-select" id="select-01">
+                <template for:each={contact.data} for:item="con">
+                    <option key={con.Id} value={con.Id}>
+                        con.Name;
+                    </option>
+                </template>
+            </select>
+            <lightning-button label="Search" variant="brand" onclick={onValueSelection}></lightning-button>
+            <lightning-button label="Reset" type="reset" variant="neutral"></lightning-button>
+        </div> 
+    </div>
+
+    <label class="slds-form-element__label" for="select-02">Search for Speciality</label>
+    <div class="slds-form-element__control">
+        <div class="slds-select_container">
+            <select class="slds-select" id="select-02" onchange={onvalueselection}>
+                <template for:each={contact.data} for:item="con">
+                    <option key={con.Id} value={con.Id}>
+                        con.Speciality;
+                    </option>
+                </template>
+            </select>
+            <lightning-button label="Search" variant="brand" onclick={onValueSelection}></lightning-button>
+            <lightning-button label="Reset" type="reset" variant="neutral"></lightning-button>
+        </div> 
+    </div>
+
+    <template if:true={contacts}>
+        <lightning-card title="Result"  >
+            <div style="height: 300px;">
+                <lightning-datatable
+                                     key-field="Id"
+                                     data={contacts}
+                                     columns={columns}>
+                </lightning-datatable>
+            </div>    
+        </lightning-card>
+    </template>
+</lightning-card>
+-->
+  <lightning-record-edit-form object-api-name="Contact" onsubmit={onsubmitaction} onsuccess={onsuccessaction} onerror={onerroraction}>
+        <lightning-input-field field-name="Name"></lightning-input-field>
+        <lightning-input-field field-name="MobilePhone"></lightning-input-field>
+        <lightning-input-field field-name="Email"></lightning-input-field>
+        <lightning-input-field field-name="Description"></lightning-input-field>
+        <lightning-input-field field-name="GenderIdentity"></lightning-input-field>
+        <lightning-input-field field-name="OtherPhone"></lightning-input-field>
+        <lightning-button label="Submit" type="submit"></lightning-button>
+    </lightning-record-edit-form>
+
+
+</template>

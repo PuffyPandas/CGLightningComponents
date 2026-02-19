@@ -1,0 +1,27 @@
+<template>
+
+        <lightning-card title="Contact records" icon-name="custom:custom5">
+    
+            <template lwc:if={record}>
+    
+            <div class="slds-m-around_medium">
+    
+            <p>{name}</p>
+            <p>{phone}</p>
+            <p>{email}</p>
+    
+            <p>{recordId}</p>
+    
+            </div>
+    
+            </template>
+    
+            <template lwc:if={error}>
+    
+                {error}
+    
+            </template>
+    
+        </lightning-card>
+    
+    </template>
