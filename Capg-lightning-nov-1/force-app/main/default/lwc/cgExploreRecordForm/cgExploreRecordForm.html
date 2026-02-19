@@ -1,0 +1,29 @@
+<template>
+<!--
+    <lightning-record-view-form>
+
+    <lightning-record-edit-form>
+
+  combo of above 2  <lightning-record-form mode="readonly, edit, view(combo of readonly and edit)">
+
+  -->
+
+  <lightning-record-form
+    record-id={recordId}
+    object-api-name="Account"
+    mode="view"
+    fields={fields} 
+    onload={handleLoad}
+    onsubmit={handleSubmit}
+    onsuccess={handleSuccess}
+    onerror={handleError}
+    >
+<!--layout van be full or compact - if it is full it will display page layout, if it is compact it will display compact layout(can refer object manager->any object detals)-->
+<!-- full has 10 fields
+     compact has 5 fields
+     but i want 7 fields
+     in this case you can use 'fields' instead of 'layout-type'-->
+
+</lightning-record-form>
+
+     </template>

@@ -1,0 +1,50 @@
+<apex:page id="page" sidebar="false" >
+    <h1>
+        This is my demo page
+    </h1>
+    <h1>
+      Name : krishna
+    </h1>
+     <h1>
+      City : Chennai
+    </h1>
+    
+    <apex:sectionHeader title="Customer"/>
+    <apex:sectionHeader titLe="Customer"  subtitle="New customer"/>
+    <apex:sectionheader tItle="Customer" subtitle="New customer" dEscription="i am a good cutomer" />    
+    <apex:sectionHeader title="Customer"  help="https://help.salesforce.com/"/>
+    <apex:sectionHeader title="Customer" rendered="false"/>    
+    
+    <apex:sectionHeader title="Section 1"  description="This will include a block in the page"/>
+    <apex:pageBlock >
+    This is a Example bLock    
+    </apex:pageBlock>
+     <apex:sectionHeader title="Section2 "   subtitle="Customer Details"   description="This will include a block in the page"/>
+    <apex:pageBlock title="Customer">
+    This is a Customer bLock    
+    </apex:pageBlock>
+    <apex:sectionHeader title="Section2 "   subtitle="New Customer"   description="This will include a block in the page"/>
+    <apex:pageBlock title="Customer"  >
+    This is a Customer bLock
+    </apex:pageBlock>
+    
+    <apex:pageBlock title="Lead"  tabStyle="Lead"  rendered="false" >
+    This is a tabstyle of LEad object object    
+    </apex:pageBlock>
+    
+      <apex:pageBlock tabStyle="College__c" title="Training">
+    This is a tabstyle of LEad object object    
+    </apex:pageBlock>
+    
+        1.This is maindetail mode <br/>
+        1.This is maindetai mode <br/>
+        1.This is maindetail mode <br/>
+        1.This is maindetail mode <br/>        
+    <apex:pageBlock title="Training"  mode="detail" >
+        1.This is detail mode <br/>
+        1.This is detai mode <br/>
+        1.This is detail mode <br/>
+        1.This is detail mode <br/>
+        
+    </apex:pageBlock>    
+</apex:page>

@@ -1,0 +1,18 @@
+<template>
+    <div class="slds-grid slds-gutters">
+
+        <div class="slds-col slds-size_2-of-5"> 
+            <h2>Certification Record Form</h2>
+
+            <lightning-record-edit-form object-api-name="Certification__c" onsuccess={handleSuccess} onerror={handleError}>
+            <lightning-input-field field-name="Name"></lightning-input-field>
+            <lightning-input-field field-name="Cert_Name__c"></lightning-input-field>
+            <lightning-input-field field-name="Cost__c"></lightning-input-field>
+            <lightning-input-field field-name="Comments__c"></lightning-input-field>
+            <lightning-button label="Submit" type="submit" ></lightning-button>
+            </lightning-record-edit-form>
+        </div>
+        <div class="slds-col slds-size_3-of-5">
+            <c-get-certification-record></c-get-certification-record> </div>
+    </div>
+</template>

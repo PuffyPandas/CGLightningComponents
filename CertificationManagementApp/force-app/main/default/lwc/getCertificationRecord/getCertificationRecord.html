@@ -1,0 +1,11 @@
+<template>
+  
+    <lightning-datatable
+            key-field="certification.data.Id"
+            onrowselection={getSelectedName}
+            data={certification.data}
+            columns={certificationColumns}>
+    </lightning-datatable>
+    <lightning-button label="Delete" onclick={handleDelete}></lightning-button>
+
+</template>

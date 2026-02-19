@@ -1,0 +1,13 @@
+<template>
+    <template for:each={accounts.data} for:item="acc"> <!-- accounts will have 3 things - data, error, status code -->
+        <div key={acc.Id}>
+            {acc.Id} <br/>
+            {acc.Name} <br/>
+            {acc.Rating} <br/>
+            {acc.Industry} <br/> 
+        </div>
+
+    </template>
+
+    <lightning-button label="Create Contact" onclick={handleClick}></lightning-button>
+</template>
